@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Allura', cursive;
+    font-family: 'Quicksand', sans-serif;
+    --bg_color: rgb(24, 24, 24);
+    background-color: black;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg_color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+}
+
+header #headline {
+    text-decoration: none;
+    font-family: 'Allura', cursive;
+    color: white;
+    font-size: 36px;
+}
+
+#nav-bar a {
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: white;
+    transition: .2s;
+}
+
+#nav-bar a:hover {
+    color: black;
+    background-color: white;
+}
+
+#check {
+    display: none;
+}
+
+.nav-icon {
+    right: 5%;
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.download-rows {
+    padding: 200px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.download-rows div {
+    height: 1px;
+    width: 100%;
+    background-color: rgb(134, 134, 134);
+}
+
+.download-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    color: white;
+}
+
+.download-row a {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(3, 255, 45);
+    padding: 7px 35px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: all .2s;
+}
+
+.download-row a:hover {
+    background-color: green;
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: var(--bg_color);
+}
+
+footer p {
+    margin-top: 4px;
+    display: flex;
+}
+
+footer p a img {
+    height: 24px;
+    margin-left: 10px;
+    transition: .1s;
+}
+
+footer p a img:hover {
+    transform: scale(1.2);
+}
+
+/*
+####################################################################
+*/
+
+@media (max-width: 1100px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    #check:checked~.nav-icon #menu-icon {
+        display: none;
+    }
+
+    .nav-icon {
+        display: inline-flex;
+    }
+
+    #check:checked~.nav-icon #close-icon {
+        display: block;
+    }
+
+    #close-icon {
+        display: none;
+    }
+
+    #nav-bar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 0;
+        width: 100%;
+        background-color: black;
+        display: inline-grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~#nav-bar {
+        height: 110px;
+    }
+
+
+    header nav a {
+        margin: 5px 0px;
+    }
+}
+
+/*
+####################################################################
+*/
+
+@media (max-width: 700px) {
+    header {
+        top: 0px;
+    }
+
+    .download-rows {
+        padding: 200px 25px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .download-rows div {
+        height: 1px;
+        width: 100%;
+        background-color: rgb(134, 134, 134);
+    }
+
+    .download-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0px;
+        color: white;
+        text-align: center;
+    }
+
+    .download-row a {
+        margin-top: 10px;
+        text-decoration: none;
+        color: black;
+        background-color: rgb(3, 255, 45);
+        padding: 5px 40px;
+        border-radius: 12px;
+        font-weight: bold;
+        transition: all .2s;
+    }
+
+    .download-row a:hover {
+        background-color: green;
+    }
+}
