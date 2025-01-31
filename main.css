@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@keyframes headline-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Allura', cursive;
+    font-family: 'Quicksand', sans-serif;
+    --bg_color: rgb(24, 24, 24);
+    background-color: black;
+}
+
+header {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg_color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+}
+
+header #headline {
+    text-decoration: none;
+    font-family: 'Allura', cursive;
+    color: white;
+    font-size: 36px;
+}
+
+#nav-bar a {
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: white;
+    transition: .2s;
+}
+
+#nav-bar a:hover {
+    color: black;
+    background-color: white;
+}
+
+#check {
+    display: none;
+}
+
+.nav-icon {
+    right: 5%;
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.elrio-sign {
+    height: 700px;
+    width: 100%;
+    background-image: url('elrio_sign.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 150px 100px;
+}
+
+.elrio-sign h1 {
+    font-size: 35px;
+    color: white;
+    text-shadow: black 0px 0px 20px;
+    margin-bottom: 30px;
+    animation: headline-fade-in 2s;
+}
+
+.elrio-sign a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: all .2s;
+    animation: headline-fade-in 3s;
+}
+
+.elrio-sign a:hover {
+    color: white;
+    background-color: black;
+}
+
+.image-left .animate {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.image-left .show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.image-right .animate {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.image-right .show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.image-left {
+    width: 100%;
+    display: flex;
+    background-color: black;
+    padding: 30px 40px;
+    overflow: hidden;
+}
+
+.image-left img {
+    height: 100%;
+    width: 50%;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.image-left span {
+    height: 100%;
+    width: 50%;
+    color: white;
+}
+
+.image-left span h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.image-left span p {
+    font-size: 15px;
+}
+
+.image-right {
+    width: 100%;
+    display: flex;
+    background-color: var(--bg_color);
+    padding: 30px 40px;
+    overflow: hidden;
+}
+
+.image-right img {
+    height: 100%;
+    width: 50%;
+    border-radius: 12px;
+    margin-left: 20px;
+}
+
+.image-right span {
+    height: 100%;
+    width: 50%;
+    color: white;
+}
+
+.image-right span h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.image-right span p {
+    font-size: 15px;
+}
+
+footer {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+}
+
+footer p {
+    margin-top: 4px;
+    display: flex;
+}
+
+footer p a img {
+    height: 24px;
+    margin-left: 10px;
+    transition: .1s;
+}
+
+footer p a img:hover {
+    transform: scale(1.2);
+}
+
+/*
+####################################################################
+*/
+
+@media (max-width: 1100px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    #check:checked~.nav-icon #menu-icon {
+        display: none;
+    }
+
+    .nav-icon {
+        display: inline-flex;
+    }
+
+    #check:checked~.nav-icon #close-icon {
+        display: block;
+    }
+
+    #close-icon {
+        display: none;
+    }
+
+    #nav-bar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 0;
+        width: 100%;
+        background-color: black;
+        display: inline-grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~#nav-bar {
+        height: 110px;
+    }
+
+
+    header nav a {
+        margin: 5px 0px;
+    }
+
+    .elrio-sign {
+        height: 400px;
+        width: 100%;
+        background-image: url('assets/images/elrio_sign.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 120px 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .elrio-sign h1 {
+        font-size: 30px;
+        color: white;
+        text-shadow: black 0px 0px 20px;
+        margin-bottom: 0px;
+    }
+
+    .elrio-sign a {
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 20px;
+        border-radius: 12px;
+        transition: all .2s;
+    }
+
+    .elrio-sign a:hover {
+        color: white;
+        background-color: black;
+    }
+
+    .image-left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        padding: 20px 30px;
+    }
+
+    .image-left img {
+        height: 100%;
+        width: 100%;
+        border-radius: 12px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .image-left span {
+        height: 100%;
+        width: 100%;
+        color: white;
+    }
+
+    .image-left span h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .image-left span p {
+        font-size: 15px;
+    }
+
+    .image-right {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: var(--bg_color);
+        padding: 20px 30px;
+    }
+
+    .image-right img {
+        height: 100%;
+        width: 100%;
+        border-radius: 12px;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .image-right span {
+        height: 100%;
+        width: 100%;
+        color: white;
+    }
+
+    .image-right span h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .image-right span p {
+        font-size: 15px;
+    }
+}
+
+/*
+####################################################################
+*/
+
+@media (max-width: 700px) {
+    header {
+        top: 0px;
+    }
+
+    .elrio-sign {
+        height: 400px;
+        width: 100%;
+        background-image: url('assets/images/elrio_sign.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 130px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .elrio-sign h1 {
+        font-size: 20px;
+        text-align: center;
+        color: white;
+        text-shadow: black 0px 0px 20px;
+        margin-bottom: 30px;
+    }
+
+    .elrio-sign a {
+        text-decoration: none;
+        font-size: 14px;
+        color: white;
+        background-color: black;
+        padding: 10px 60px;
+        border-radius: 12px;
+    }
+
+    .image-left span h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .image-left span p {
+        font-size: 13px;
+    }
+
+    .image-right span h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .image-right span p {
+        font-size: 13px;
+    }
+}
