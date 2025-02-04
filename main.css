@@ -264,7 +264,7 @@ footer p a img:hover {
     .elrio-sign {
         height: 400px;
         width: 100%;
-        background-image: url('assets/images/elrio_sign.png');
+        background-image: url('elrio_sign.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -370,7 +370,7 @@ footer p a img:hover {
     .elrio-sign {
         height: 400px;
         width: 100%;
-        background-image: url('assets/images/elrio_sign.png');
+        background-image: url('elrio_sign.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
